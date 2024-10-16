@@ -20,9 +20,9 @@ public class CondicionalSwitch {
                  break;
              case "circulo":
                  System.out.println("dame diametro");
-                 Scanner diametro= new Scanner(System.in);
-                 int radio=radio.nextInt();
-                 double areacirc=Math.pow(radio,2)*Math.PI;
+                 Scanner radio= new Scanner(System.in);
+                 int Radio=radio.nextInt();
+                 double areacirc=Math.pow(Radio,2)*Math.PI;
                  System.out.println("el area es "+ areacirc);
                  break;
 
