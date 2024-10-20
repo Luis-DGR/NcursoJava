@@ -1,3 +1,5 @@
+package primeros_pasos;
+
 public class ClaseMath {
     public static void main(String[] args) {
         //operaciones con Math

@@ -1,3 +1,5 @@
+package primeros_pasos;
+
 public class Arrays {
     public static void main(String[] args) {
         //declarar array e imprimir los elementos

@@ -1,3 +1,5 @@
+package primeros_pasos;
+
 import java.util.Scanner;
 
 public class Condicionales {

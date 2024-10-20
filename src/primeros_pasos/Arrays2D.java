@@ -1,3 +1,5 @@
+package primeros_pasos;
+
 public class Arrays2D {
     public static void main(String[] args) {
     //rellenar array de 3*3 e imprimir valores

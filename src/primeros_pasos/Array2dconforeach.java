@@ -1,3 +1,5 @@
+package primeros_pasos;
+
 public class Array2dconforeach {
     public static void main(String[] args) {
 

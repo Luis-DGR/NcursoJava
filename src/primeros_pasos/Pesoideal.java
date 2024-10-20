@@ -1,3 +1,5 @@
+package primeros_pasos;
+
 import javax.swing.*;
 
 public class Pesoideal {

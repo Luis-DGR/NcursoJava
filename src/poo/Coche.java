@@ -7,13 +7,6 @@ public class Coche {
      private String color;
      private boolean AsientosCuero;
 
-   /* private int largo;
-
-    private int ancho;
-
-    private int motor;
-
-    private int peso;*/
 
     //propiedades pre definidas METODO CONSTRUCTOR
 
