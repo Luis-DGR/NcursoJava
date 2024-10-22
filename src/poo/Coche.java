@@ -48,6 +48,11 @@ public class Coche {
         return color;
 
     }
+    public String getdatosgenerales(){
+        return "el color es: "+color+"el peso es: "+peso+"el largo es: "+largo+"el ancho es: "+ancho+
+                "el numero de ruedas es: "+ruedas;
+    }
+
     public void setAsientosCuero(String AsientosCuero){
         if (AsientosCuero.equals("si")) {
             this.AsientosCuero = true;
