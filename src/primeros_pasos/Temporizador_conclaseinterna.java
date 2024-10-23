@@ -15,20 +15,23 @@ System.exit(0);
 
 
     }
+
 }
 class Reloj{
+    private int intervalo;
+    private boolean sonido;
     public Reloj(int intervalo,boolean sonido){
         this.intervalo=intervalo;
         this.sonido=sonido;
 
     }
+    //metodo
     public void enMarcha(){
         ActionListener oyente= new Dame_la_hora();
         Timer mitemporizador=new Timer(intervalo,oyente);
         mitemporizador.start();
     }
-    private int intervalo;
-    private boolean sonido;
+
     //clase interna
     private class Dame_la_hora implements ActionListener{
 
