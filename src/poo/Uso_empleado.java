@@ -82,15 +82,19 @@ class Empleado {
     private static int IdSiguiente;
     private int Id;
 }
-
-class Jefatura extends Empleado{
+//hereda de clase empleado ye implementa una interfaz
+class Jefatura extends Empleado implements Primer_interfaz_parajefaturas{
 
     public Jefatura(String nom,double sue,int year, int month, int day){
         super(nom, sue, year, month, day);
 
 
     }
+    //implementamos el metodo de la interfaz
+   public String toma_decicion(String decicion){
 
+        return "se ha tomado la decicion de: "+ decicion;
+   }
 
     public void setIncentivo(double incen) {
         Incentivo = incen;

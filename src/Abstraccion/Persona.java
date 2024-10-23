@@ -1,5 +1,4 @@
 package Abstraccion;
-import javax.swing.*;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -12,9 +11,10 @@ public class Persona {
 
 
 }
-abstract class Personita{
+//clase abstracta abstracto
+ abstract class Clases_abstractas {
 private String nombre;
-    public Personita(String nom){
+    public Clases_abstractas(String nom){
       nombre=nom;
     }
 
@@ -30,7 +30,7 @@ private String nombre;
 
 
 
-class Empleado2 extends Personita {
+class Empleado2 extends Clases_abstractas {
     public Empleado2( String nom,double sue, int year, int month, int day) {
      super(nom);
 
