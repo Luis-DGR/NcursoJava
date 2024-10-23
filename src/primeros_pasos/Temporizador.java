@@ -1,6 +1,7 @@
 package primeros_pasos;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
@@ -29,6 +30,8 @@ public class Temporizador {
         public void actionPerformed(ActionEvent e) {
             Date ahora=new Date();
             System.out.println("te pongo la hora cada 5seg "+ahora);
+        //da un beep cada ciclo
+            Toolkit.getDefaultToolkit().beep();
         }
     }
 
