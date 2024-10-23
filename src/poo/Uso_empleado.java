@@ -43,11 +43,6 @@ public class Uso_empleado {
 
 
 
-
-
-
-
-
     }
 }
 class Empleado {
