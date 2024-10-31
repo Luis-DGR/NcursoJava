@@ -1,6 +1,7 @@
 package evenyos;
 
 import javax.swing.*;
+import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
@@ -24,14 +25,21 @@ class Marco_ventana extends JFrame{
         setTitle("primer texto");
 
     }
-}
-class M_ventana implements WindowListener{
+}//con la interfaz(OBLIGA A DECLARAR TODOS LOS METODOS)
+/*class M_ventana implements WindowListener{
 
-    public void windowOpened(WindowEvent e) { /* Acción */ }
-    public void windowClosing(WindowEvent e) { /* Acción */ }
-    public void windowClosed(WindowEvent e) { /* Acción */ }
-    public void windowIconified(WindowEvent e) { /* Acción */ }
-    public void windowDeiconified(WindowEvent e) { /* Acción */ }
-    public void windowActivated(WindowEvent e) { /* Acción */ }
-    public void windowDeactivated(WindowEvent e) { /* Acción */ }
+    public void windowOpened(WindowEvent e) {  }
+    public void windowClosing(WindowEvent e) {  }
+    public void windowClosed(WindowEvent e) {  }
+    public void windowIconified(WindowEvent e) {  }
+    public void windowDeiconified(WindowEvent e) { }
+    public void windowActivated(WindowEvent e) { }
+    public void windowDeactivated(WindowEvent e) {  }
+}
+*/
+//con clase adaptadora(SOLO IMPLEMENTA LOS METODOS A UTILIZAR)
+class M_venyana extends WindowAdapter{
+    public void windowOpened(WindowEvent e){
+
+    }
 }
