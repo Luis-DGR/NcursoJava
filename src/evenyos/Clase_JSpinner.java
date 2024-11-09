@@ -1,6 +1,7 @@
 package evenyos;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Clase_JSpinner {
     public static void main(String[] args) {
@@ -25,7 +26,11 @@ class Marco7 extends JFrame {
 }
 class LAmina6 extends JPanel{
     public LAmina6(){
+        JSpinner control=new JSpinner(new SpinnerNumberModel(1,0,10,1));
+        control.setPreferredSize(new Dimension(20,10));
 
+
+        add(control);
 
     }
 }
