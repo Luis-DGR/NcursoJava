@@ -1,6 +1,7 @@
 package plantilla;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Plantilla {
     public static void main(String[] args) {
@@ -25,7 +26,11 @@ class Marcox extends JFrame {
 }
 class LAminax extends JPanel{
     public LAminax(){
+    JSpinner control=new JSpinner(new SpinnerNumberModel(1,0,10,1));
+    control.setPreferredSize(new Dimension(20,10));
 
+
+    add(control);
 
     }
 }
