@@ -27,9 +27,11 @@ class PanelAction extends JPanel{
         ActionColor accionred=new ActionColor("rojo",Color.red);
         ActionColor accionblue=new ActionColor("azul",Color.blue);
 
+
         add(new JButton(accionAmarillo));
         add(new JButton(accionred));
         add(new JButton(accionblue));
+
 
 
     }
