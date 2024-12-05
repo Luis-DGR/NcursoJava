@@ -1,5 +1,6 @@
 package Hilos;
 
+import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 
 
@@ -28,23 +29,26 @@ class Banco{
 
 
         }
+        saldoSufi=cierreBanco.newCondition();
     }
-public void transferencia(int cuentaOrigen, int cuentaDestino,double cantidad) {
+public void transferencia(int cuentaOrigen, int cuentaDestino,double cantidad) throws InterruptedException {
 
         cierreBanco.lock();
 
     try {
 
 
-        if (cuentas[cuentaOrigen] < cantidad) {
+       while (cuentas[cuentaOrigen] < cantidad) {
 
-            return;
+           saldoSufi.await();
         }
         System.out.println(Thread.currentThread());
         cuentas[cuentaOrigen] -= cantidad;
         System.out.printf("%10.2f de %d para %d", cantidad, cuentaOrigen, cuentaDestino);
         cuentas[cuentaDestino] += cantidad;
         System.out.printf(" saldo total: %10.2f%n", getSaldoTotal());
+
+        saldoSufi.signalAll();
 
     }finally {
         cierreBanco.unlock();
@@ -63,6 +67,7 @@ public double getSaldoTotal(){
 
     private final double[] cuentas;
    private Lock cierreBanco=new ReentrantLock();
+   private Condition saldoSufi;
 }
 class EjecucionTransfer implements Runnable{
 
@@ -77,8 +82,12 @@ class EjecucionTransfer implements Runnable{
         while (true){
             int paraLaCuenta=(int)(100*Math.random());
             double cantidad=cantidadMax*Math.random();
-            banco.transferencia(deLaCuenta,paraLaCuenta,cantidad);
-          try{
+            try {
+                banco.transferencia(deLaCuenta,paraLaCuenta,cantidad);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            try{
               Thread.sleep((int)(Math.random()*10));
           }
           catch (InterruptedException e){
