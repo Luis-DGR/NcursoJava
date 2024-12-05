@@ -31,16 +31,18 @@ class Banco{
         }
         saldoSufi=cierreBanco.newCondition();
     }
-public void transferencia(int cuentaOrigen, int cuentaDestino,double cantidad) throws InterruptedException {
+    //añadimos synchronixed
+public synchronized void transferencia(int cuentaOrigen, int cuentaDestino,double cantidad) throws InterruptedException {
 
-        cierreBanco.lock();
+      //  cierreBanco.lock();
 
-    try {
+   // try {
 
 
        while (cuentas[cuentaOrigen] < cantidad) {
 
-           saldoSufi.await();
+        //   saldoSufi.await();
+           wait();
         }
         System.out.println(Thread.currentThread());
         cuentas[cuentaOrigen] -= cantidad;
@@ -48,11 +50,12 @@ public void transferencia(int cuentaOrigen, int cuentaDestino,double cantidad) t
         cuentas[cuentaDestino] += cantidad;
         System.out.printf(" saldo total: %10.2f%n", getSaldoTotal());
 
-        saldoSufi.signalAll();
+       // saldoSufi.signalAll();
+    notifyAll();
 
-    }finally {
-        cierreBanco.unlock();
-    }
+   // }finally {
+     //   cierreBanco.unlock();
+   // }
 }
 public double getSaldoTotal(){
         double suma_cuentas=0;
