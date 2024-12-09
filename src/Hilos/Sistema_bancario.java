@@ -31,7 +31,7 @@ class Banco{
         }
         saldoSufi=cierreBanco.newCondition();
     }
-    //añadimos synchronixed
+    //añadimos synchronixed*********************!!!!!!!!
 public synchronized void transferencia(int cuentaOrigen, int cuentaDestino,double cantidad) throws InterruptedException {
 
       //  cierreBanco.lock();
